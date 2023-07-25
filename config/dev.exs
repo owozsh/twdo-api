@@ -4,7 +4,7 @@ import Config
 config :twdo_api, TwdoApi.Repo,
   username: "postgres",
   password: "postgres",
-  hostname: "localhost",
+  hostname: "db",
   database: "twdo_api_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
