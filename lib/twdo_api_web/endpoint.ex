@@ -7,8 +7,7 @@ defmodule TwdoApiWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_twdo_api_key",
-    signing_salt: "m6mT+b9n",
-    same_site: "Lax"
+    signing_salt: "GzNA5W71"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
@@ -21,13 +20,11 @@ defmodule TwdoApiWeb.Endpoint do
     at: "/",
     from: :twdo_api,
     gzip: false,
-    only: TwdoApiWeb.static_paths()
+    only: ~w(assets fonts images favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
-    socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
-    plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
     plug Phoenix.Ecto.CheckRepoStatus, otp_app: :twdo_api
   end

@@ -17,17 +17,14 @@ config :twdo_api, TwdoApi.Repo,
 # you can enable the server option below.
 config :twdo_api, TwdoApiWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "8u+CwVLPnSG55hs+13QFIh0rwIX2qKSNKu8fvmZAAaW3StITy3Gu7vZEqIend8SF",
+  secret_key_base: "TY7GAN2oVhqk332XlB5mQlFi9sl8Eig4bk7jf+AzQ9t3GSSydXzNNrC1BgLUu/ry",
   server: false
 
 # In test we don't send emails.
 config :twdo_api, TwdoApi.Mailer, adapter: Swoosh.Adapters.Test
 
-# Disable swoosh api client as it is only required for production adapters.
-config :swoosh, :api_client, false
-
 # Print only warnings and errors during test
-config :logger, level: :warning
+config :logger, level: :warn
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime

@@ -8,14 +8,12 @@ defmodule TwdoApi.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Start the Telemetry supervisor
-      TwdoApiWeb.Telemetry,
       # Start the Ecto repository
       TwdoApi.Repo,
+      # Start the Telemetry supervisor
+      TwdoApiWeb.Telemetry,
       # Start the PubSub system
       {Phoenix.PubSub, name: TwdoApi.PubSub},
-      # Start Finch
-      {Finch, name: TwdoApi.Finch},
       # Start the Endpoint (http/https)
       TwdoApiWeb.Endpoint
       # Start a worker by calling: TwdoApi.Worker.start_link(arg)

@@ -19,15 +19,15 @@ defmodule TwdoApiWeb.ConnCase do
 
   using do
     quote do
-      # The default endpoint for testing
-      @endpoint TwdoApiWeb.Endpoint
-
-      use TwdoApiWeb, :verified_routes
-
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
       import TwdoApiWeb.ConnCase
+
+      alias TwdoApiWeb.Router.Helpers, as: Routes
+
+      # The default endpoint for testing
+      @endpoint TwdoApiWeb.Endpoint
     end
   end
 
